@@ -1,12 +1,12 @@
 steps:
-- name: gcr.io/cloud-builders/git
+- name: gcr.io/$PROJECT_ID/git
   args: ['clone', 'https://github.com/Zerneax/myCity']
-- name: 'grc.io/cloud-builders/npm'
+- name: 'grc.io/$PROJECT_ID/npm'
   args: ['install']
-- name: 'grc.io/cloud-builders/npm'
+- name: 'grc.io/$PROJECT_ID/npm'
   args: ['run', 'test:unit']
-- name: 'grc.io/cloud-builders/npm'
+- name: 'grc.io/$PROJECT_ID/npm'
   args: ['run', 'build']
-- name: 'gcr.io/cloud-builders/gcloud'
+- name: 'gcr.io/$PROJECT_ID/gcloud'
   args: ['app', 'deploy']
 timeout: '1600s'
