@@ -1,5 +1,5 @@
 steps:
-- name: gcr.io/$PROJECT_ID/git
+- name: gcr.io/cloud-builders/git
   args: ['clone', 'https://github.com/Zerneax/myCity']
 - name: 'grc.io/$PROJECT_ID/npm'
   args: ['install']
