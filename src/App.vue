@@ -1,8 +1,11 @@
 <template>
   <div id="app">
-    <div id="nav">
+    <!-- <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
+    </div> -->
+    <div class="ui one item menu">
+      <a class="item active"> VLille</a>
     </div>
     <router-view/>
   </div>
