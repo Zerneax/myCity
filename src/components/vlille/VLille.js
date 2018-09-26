@@ -1,4 +1,5 @@
 import axios from 'axios'
+import "leaflet/dist/leaflet.css"
 
 export default {
   name: 'vLille',
@@ -6,7 +7,9 @@ export default {
     return {
       vlille: [],
       nbhits : 0,
-      start: 0
+      start: 0,
+      url: 'http://{s}.tile.osm.org/{z}/{x}/{y}.png',
+attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
     };
   },
   created() {
@@ -17,8 +20,14 @@ export default {
       this.vlille = response.data.records;
     })
     .catch(e => {
-      console.log("Erreur !!");
+      console.log("Erreur !!", e);
     });
+  },
+  mounted() {
+    //do something after mounting vue instance
+    this.$nextTick(() => {
+      this.map = this.$refs.map.mapObject // work as expected
+    })
   },
   methods: {
     suivant() {
@@ -29,7 +38,7 @@ export default {
         this.vlille = response.data.records;
       })
       .catch(e => {
-        console.log("Erreur !!");
+        console.log("Erreur !!", e);
       });
     },
     precedent() {
@@ -40,7 +49,7 @@ export default {
         this.vlille = response.data.records;
       })
       .catch(e => {
-        console.log("Erreur !!");
+        console.log("Erreur !!", e);
       });
     }
   }
