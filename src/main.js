@@ -7,6 +7,7 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { faBicycle } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
+import "leaflet/dist/leaflet.css"
 import 'semantic-ui-css/semantic.min.css'
 
 library.add(faBicycle)

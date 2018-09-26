@@ -21,6 +21,8 @@
       <div class="column">
         <v-map ref="map" :zoom=13 :center="[50.6333, 3.0667]" >
           <v-tilelayer :url="url" :attribution="attribution"></v-tilelayer>
+            <
+            <v-marker v-for="station in vlille" :lat-lng="station.fields.geo"></v-marker>
         </v-map>
       </div>
     </div>
