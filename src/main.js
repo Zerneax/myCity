@@ -6,6 +6,7 @@ import Vue2leaflet from 'vue2-leaflet'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faBicycle } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import infiniteScroll from 'vue-infinite-scroll'
 
 import "leaflet/dist/leaflet.css"
 import 'semantic-ui-css/semantic.min.css'
@@ -19,6 +20,7 @@ Vue.component('v-marker', Vue2leaflet.LMarker);
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 Vue.use(SuiVue);
+Vue.use(infiniteScroll)
 Vue.config.productionTip = false
 
 new Vue({
