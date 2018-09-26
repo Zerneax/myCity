@@ -3,12 +3,19 @@ import App from './App.vue'
 import router from './router'
 import SuiVue from 'semantic-ui-vue'
 import Vue2leaflet from 'vue2-leaflet'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faBicycle } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 import 'semantic-ui-css/semantic.min.css'
+
+library.add(faBicycle)
 
 Vue.component('v-map', Vue2leaflet.LMap);
 Vue.component('v-tilelayer', Vue2leaflet.LTileLayer);
 Vue.component('v-marker', Vue2leaflet.LMarker);
+
+Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 Vue.use(SuiVue);
 Vue.config.productionTip = false

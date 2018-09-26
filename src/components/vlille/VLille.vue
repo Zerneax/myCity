@@ -9,6 +9,8 @@
               <p> Nom de la station : {{station.fields.nom}} </p>
               <p> Nombre de velos disponibles : {{station.fields.nbvelosdispo}} </p>
               <p> Nombre de places disponibles : {{station.fields.nbplacesdispo}} </p>
+              <font-awesome-icon icon="bicycle"/>
+              <!-- <i class="fas fa-bicycle"></i> -->
             </sui-list-item>
             <div class="ui divider"></div>
           </sui-list>
