@@ -18,7 +18,9 @@
     "vue": "^2.5.17",
     "vue-infinite-scroll": "^2.0.2",
     "vue-router": "^3.0.1",
-    "vue2-leaflet": "^1.0.2"
+    "vue2-leaflet": "^1.0.2",
+    "semantic-ui-css": "^2.4.0",
+    "semantic-ui-vue": "^0.4.1"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.0.2",
@@ -31,8 +33,6 @@
     "vue-template-compiler": "^2.5.17"
   },
   "optionalDependencies ": {
-    "semantic-ui": "^2.4.0",
-    "semantic-ui-css": "^2.4.0",
-    "semantic-ui-vue": "^0.4.1"
+    "semantic-ui": "^2.4.0"
   }
 }
