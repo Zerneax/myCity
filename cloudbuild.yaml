@@ -1,6 +1,4 @@
 steps:
-- name: gcr.io/cloud-builders/git
-  args: ['clone', 'https://github.com/Zerneax/myCity']
 - name: 'gcr.io/cloud-builders/npm'
   args: ['install', '--no-optional']
 - name: 'gcr.io/cloud-builders/npm'
