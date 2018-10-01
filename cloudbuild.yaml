@@ -1,9 +1,3 @@
 steps:
-- name: 'gcr.io/cloud-builders/npm'
-  args: ['install', '--no-optional']
-- name: 'gcr.io/cloud-builders/npm'
-  args: ['run', 'test:unit']
-- name: 'gcr.io/cloud-builders/npm'
-  args: ['run', 'build']
 - name: 'gcr.io/cloud-builders/gcloud'
   args: ['app', 'deploy']
