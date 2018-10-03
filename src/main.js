@@ -16,6 +16,9 @@ library.add(faBicycle)
 Vue.component('v-map', Vue2leaflet.LMap);
 Vue.component('v-tilelayer', Vue2leaflet.LTileLayer);
 Vue.component('v-marker', Vue2leaflet.LMarker);
+Vue.component('v-tooltip', Vue2leaflet.LTooltip);
+Vue.component('v-zoom', Vue2leaflet.LControlZoom);
+
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
