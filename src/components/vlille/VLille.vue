@@ -2,8 +2,8 @@
   <body>
     <div class="ui two column grid">
       <div class="column">
-        <div class="ui" v-infinite-scroll="loadMore" infinite-scroll-disabled="scrollAvailable" infinite-scroll-distance="10">
-          <sui-list v-for="station in stations" :key="station.recordid" >
+        <!-- <div class="ui" v-infinite-scroll="loadMore" infinite-scroll-disabled="scrollAvailable" infinite-scroll-distance="10"> -->
+          <sui-list v-for="station in vlille" :key="station.recordid" >
             <sui-list-item>
               <p> Commune : {{station.fields.commune}} </p>
               <p> Nom de la station : {{station.fields.nom}} </p>
@@ -16,12 +16,12 @@
           </sui-list>
           <button class="ui button" v-on:click="precedent()" :disabled="start == 0"> Précédent </button>
           <button class="ui button" v-on:click="suivant()" :disabled="(nbhits - (start + 10)) <= 0"> Suivant </button>
-        </div>
+        <!-- </div> -->
       </div>
       <div class="column">
         <v-map ref="map" :zoom=13 :center="[50.6333, 3.0667]" >
           <v-tilelayer :url="url" :attribution="attribution"></v-tilelayer>
-            <v-marker v-for="station in stations" :lat-lng="station.fields.geo"></v-marker>
+            <v-marker v-for="station in vlille" :lat-lng="station.fields.geo"></v-marker>
         </v-map>
       </div>
     </div>

@@ -15,24 +15,18 @@ export default {
   data() {
     return {
       vlille: [],
-      stations: [],
       nbhits : 0,
       start: 0,
-      scrollAvailable: true,
       url: 'http://{s}.tile.osm.org/{z}/{x}/{y}.png',
-attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+      attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
     };
   },
   created() {
-    let url = "https://opendata.lillemetropole.fr/api/records/1.0/search//?dataset=vlille-realtime&rows=223";
+    let url = "https://opendata.lillemetropole.fr/api/records/1.0/search//?dataset=vlille-realtime&rows=10";
     axios(url)
     .then(response => {
       this.nbhits = response.data.nhits;
       this.vlille = response.data.records;
-      for(var i=this.start; i < 10; i++,this.start++) {
-        this.stations.push(this.vlille[i]);
-      }
-      this.scrollAvailable = false;
     })
     .catch(e => {
       console.log("Erreur !!", e);
@@ -73,15 +67,6 @@ attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contri
       .catch(e => {
         console.log("Erreur !!", e);
       });
-    },
-    loadMore() {
-      console.log("test");
-      this.scrollAvailable = true;
-      var tmp = this.start;
-      for(var i=this.start; i < tmp + 10; i++,this.start++) {
-        this.stations.push(this.vlille[i]);
-      }
-      this.scrollAvailable = false;
     }
   }
 };
