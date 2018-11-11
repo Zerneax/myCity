@@ -1,8 +1,9 @@
 <template>
   <body>
+    <button class="ui button">API</button>
     <div class="ui two column grid">
       <div class="column">
-        <button class="ui circular right floated icon button" v-on:click="option()">
+        <button class="ui circular right floated icon button" v-on:click="api()">
           <i class="filter icon"></i>
         </button>
         <sui-modal v-model="optionOpened">
@@ -10,8 +11,16 @@
           <sui-modal-content image>
             <!-- <sui-image wrapped size="medium" src="static/images/avatar/large/rachel.png" /> -->
             <sui-modal-description>
-              <sui-form-fields grouped>
-                <sui-form-field>
+              <sui-form-fields grouped v-for="city in ville">
+                <!-- <sui-list  >
+                  <sui-list-item> -->
+                    <!-- <p> {{city}} </p> -->
+                    <sui-form-field>
+                      <sui-checkbox :label="city" radio :value="city" v-model="commune"/>
+                    </sui-form-field>
+                  <!-- </sui-list-item>
+                </sui-list> -->
+                <!-- <sui-form-field>
                   <sui-checkbox label="Toutes" radio value="ALL" v-model="commune"/>
                 </sui-form-field>
                 <sui-form-field>
@@ -61,7 +70,7 @@
                 </sui-form-field>
                 <sui-form-field>
                   <sui-checkbox label="Saint Andre Lez Lille" radio value="SAINT ANDRE LEZ LILLE" v-model="commune"/>
-                </sui-form-field>
+                </sui-form-field> -->
               </sui-form-fields>
             </sui-modal-description>
           </sui-modal-content>

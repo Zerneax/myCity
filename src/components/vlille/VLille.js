@@ -22,7 +22,13 @@ export default {
       position: 'topright',
       mapOptions: { zoomControl: false, attributionControl: false },
       url: 'http://{s}.tile.osm.org/{z}/{x}/{y}.png',
-      attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+      attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
+      ville: ["ALL", "LILLE", "MONS EN BAROEUL",
+              "LA MADELEINE", "LAMBERSART", "VILLENEUVE D'ASCQ",
+              "CROIX", "ROUBAIX", "TOURCOING",
+              "WATTRELOS", "LILLE HELLEMMES", "MARCQ EN BAROEUL",
+              "RONCHIN", "HELLEMMES", "LOMME",
+              "FACHES-THUMESNIL", "SAINT ANDRE LEZ LILLE"]
     };
   },
   created() {
@@ -93,6 +99,15 @@ export default {
         this.nbhits = response.data.nhits;
         this.vlille = response.data.records;
         this.start = 0;
+      })
+      .catch(e => {
+        console.log("Erreur !!", e);
+      });
+    },
+    api() {
+      axios('http://192.168.0.18:9666/produits')
+      .then(response => {
+        console.log("Sucess");
       })
       .catch(e => {
         console.log("Erreur !!", e);
