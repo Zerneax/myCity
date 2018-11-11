@@ -1,9 +1,9 @@
 <template>
   <body>
-    <button class="ui button">API</button>
+    <button class="ui button"  v-on:click="api()">API</button>
     <div class="ui two column grid">
       <div class="column">
-        <button class="ui circular right floated icon button" v-on:click="api()">
+        <button class="ui circular right floated icon button" v-on:click="option()">
           <i class="filter icon"></i>
         </button>
         <sui-modal v-model="optionOpened">
